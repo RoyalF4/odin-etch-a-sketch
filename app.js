@@ -24,11 +24,15 @@ function createGrid(containerSize, gridSize) {
         div.style.height = `${containerSize / gridSize}px`;
         
         div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = 'black';
+            div.style.backgroundColor = `rgb(${getRandomColor()},${getRandomColor()},${getRandomColor()})`;
         });
 
         container.appendChild(div);
     }
+}
+
+function getRandomColor() {
+    return Math.floor(Math.random() * 256)
 }
 
 createGrid(containerSize, gridSize);
